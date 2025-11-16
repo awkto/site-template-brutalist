@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TENROX - Infrastructure Consulting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Courier New', monospace;
+            background: #fff;
+            color: #000;
+            line-height: 1.4;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        header {
+            background: #000;
+            color: #fff;
+            padding: 40px 20px;
+            border: 8px solid #000;
+            position: relative;
+        }
+        h1 {
+            font-size: 120px;
+            font-weight: 900;
+            letter-spacing: -5px;
+            text-transform: uppercase;
+            line-height: 0.9;
+            border: 4px solid #fff;
+            padding: 20px;
+            display: inline-block;
+            background: #ff0000;
+            color: #000;
+            transform: rotate(-2deg);
+            margin-left: 50px;
+        }
+        .tagline {
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: #fff;
+            color: #000;
+            padding: 15px 30px;
+            border: 4px solid #000;
+            display: inline-block;
+            margin-top: 30px;
+            transform: rotate(1deg);
+        }
+        nav {
+            background: #ff0000;
+            border: 8px solid #000;
+            padding: 0;
+            margin: -20px 0 40px 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        nav li {
+            border-right: 8px solid #000;
+        }
+        nav li:last-child {
+            border-right: none;
+        }
+        nav a {
+            display: block;
+            padding: 25px 40px;
+            color: #000;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 20px;
+            text-transform: uppercase;
+            background: #ff0000;
+            transition: all 0.1s;
+        }
+        nav a:hover {
+            background: #000;
+            color: #ff0000;
+        }
+        .hero {
+            padding: 80px 20px;
+            background: #fff;
+            border: 8px solid #000;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .hero h2 {
+            font-size: 72px;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 30px;
+            background: #000;
+            color: #fff;
+            padding: 30px;
+            border: 4px solid #000;
+            display: inline-block;
+        }
+        .hero p {
+            font-size: 28px;
+            font-weight: 700;
+            max-width: 800px;
+            background: #ff0000;
+            padding: 25px;
+            border: 4px solid #000;
+            margin-bottom: 20px;
+            transform: rotate(-1deg);
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 0;
+            margin-bottom: 40px;
+        }
+        .service {
+            background: #fff;
+            border: 8px solid #000;
+            padding: 40px;
+            position: relative;
+            margin: -4px;
+        }
+        .service:nth-child(odd) {
+            background: #000;
+            color: #fff;
+        }
+        .service:nth-child(3n) {
+            background: #ff0000;
+            color: #000;
+        }
+        .service h3 {
+            font-size: 42px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            line-height: 1;
+            border: 4px solid currentColor;
+            padding: 15px;
+            display: inline-block;
+        }
+        .service ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        .service li {
+            font-size: 18px;
+            font-weight: 700;
+            padding: 12px 0;
+            border-bottom: 3px solid currentColor;
+            text-transform: uppercase;
+        }
+        .service li:last-child {
+            border-bottom: none;
+        }
+        .cta {
+            background: #000;
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+            border: 8px solid #000;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        .cta h2 {
+            font-size: 64px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            line-height: 1;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 30px 60px;
+            background: #ff0000;
+            color: #000;
+            font-size: 32px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 8px solid #fff;
+            margin-top: 20px;
+            transform: rotate(-2deg);
+            transition: all 0.1s;
+        }
+        .cta-button:hover {
+            background: #fff;
+            color: #000;
+            transform: rotate(2deg) scale(1.05);
+        }
+        footer {
+            background: #ff0000;
+            color: #000;
+            padding: 40px 20px;
+            border: 8px solid #000;
+            text-align: center;
+            font-weight: 900;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        .overlap-box {
+            position: absolute;
+            top: -20px;
+            right: 40px;
+            background: #ff0000;
+            border: 6px solid #000;
+            padding: 20px 40px;
+            font-size: 24px;
+            font-weight: 900;
+            text-transform: uppercase;
+            transform: rotate(5deg);
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 60px; margin-left: 0; }
+            .hero h2 { font-size: 48px; }
+            .hero p { font-size: 20px; }
+            .service h3 { font-size: 32px; }
+            .services { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>TENROX</h1>
+            <div class="tagline">Infrastructure That Works</div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <h2>BUILD.<br>DEPLOY.<br>SCALE.</h2>
+            <p>We architect, deploy, and maintain robust infrastructure solutions for modern businesses.</p>
+            <p>No fluff. No nonsense. Just results.</p>
+            <div class="overlap-box">EST. 2024</div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="service">
+                <h3>SDLC</h3>
+                <p>Complete software development lifecycle management from planning to deployment.</p>
+                <ul>
+                    <li>CI/CD Pipelines</li>
+                    <li>Version Control</li>
+                    <li>Automated Testing</li>
+                    <li>Release Management</li>
+                </ul>
+            </div>
+            <div class="service">
+                <h3>Containerization</h3>
+                <p>Modern application deployment using Docker and Kubernetes orchestration.</p>
+                <ul>
+                    <li>Docker Configuration</li>
+                    <li>Kubernetes Setup</li>
+                    <li>Container Registry</li>
+                    <li>Orchestration</li>
+                </ul>
+            </div>
+            <div class="service">
+                <h3>Cloud Migration</h3>
+                <p>Seamless transition to cloud infrastructure with zero downtime.</p>
+                <ul>
+                    <li>AWS/Azure/GCP</li>
+                    <li>Migration Strategy</li>
+                    <li>Data Transfer</li>
+                    <li>Performance Tuning</li>
+                </ul>
+            </div>
+            <div class="service">
+                <h3>Security</h3>
+                <p>Enterprise-grade security implementation and compliance management.</p>
+                <ul>
+                    <li>Security Audits</li>
+                    <li>Penetration Testing</li>
+                    <li>Compliance (SOC2, ISO)</li>
+                    <li>Incident Response</li>
+                </ul>
+            </div>
+            <div class="service">
+                <h3>Self-Hosted</h3>
+                <p>On-premise infrastructure solutions with full control and privacy.</p>
+                <ul>
+                    <li>Private Cloud Setup</li>
+                    <li>Bare Metal Servers</li>
+                    <li>Network Configuration</li>
+                    <li>Disaster Recovery</li>
+                </ul>
+            </div>
+            <div class="service">
+                <h3>Integration</h3>
+                <p>Connect your systems, automate workflows, optimize operations.</p>
+                <ul>
+                    <li>API Development</li>
+                    <li>System Integration</li>
+                    <li>Workflow Automation</li>
+                    <li>Data Pipelines</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="cta" id="contact">
+            <h2>READY TO BUILD?</h2>
+            <p style="font-size: 24px; font-weight: 700; margin: 20px 0;">Let's talk infrastructure.</p>
+            <a href="mailto:contact@baseten.com" class="cta-button">GET STARTED</a>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            &copy; 2024 TENROX - Infrastructure Consulting - All Rights Reserved
+        </div>
+    </footer>
+</body>
+</html>
